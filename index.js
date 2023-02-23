@@ -46,8 +46,9 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(originalFlavors){
+  const arrayCopy = originalFlavors.slice();
+  return arrayCopy;
 }
 
 
@@ -63,8 +64,12 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(originalFlavors){
+  if (originalFlavors.length === 31){
+    return true;
+  }else{
+    return false;
+  }
  }
 
 
@@ -82,8 +87,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(originalFlavors,flavor){
+  originalFlavors.unshift(flavor);
+  return originalFlavors;
  }
 
 
@@ -100,8 +106,9 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(originalFlavors){
+ originalFlavors.pop();
+ return originalFlavors;
 }
 
 
@@ -118,8 +125,8 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(originalFlavors,i){
+  return originalFlavors[i];
 }
 
 
@@ -138,8 +145,10 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(originalFlavors,flavor){
+  let index = originalFlavors.indexOf(flavor);
+  originalFlavors.splice(index,1);
+  return originalFlavors;
 }
 
 
@@ -161,10 +170,15 @@ Use the filterByWord function below to do the following:
 
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
+let flavor = 'Chocolate';
 
-
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array,flavor){
+ const newArray = [];
+  for(let i=0;i<array.length;i++)
+if (array[i].includes(flavor)){
+  newArray.push(array[i]);
+}
+return newArray;
 }
 
 
